@@ -1,0 +1,41 @@
+.cartComponent{
+    margin: auto;
+    width: 90%;
+    padding: 15px 0;
+    background-color: var(--color-rose-50);
+    border-radius: 34px;
+}
+
+.article{
+    /* width: 476px; */
+    max-width: 100%;
+    height: 270px;
+    padding: 0 12px;
+}
+
+.article h2{
+    font-size: 23px;
+    color: var(--color-red);
+    font-weight: 700;
+}
+
+.article p{
+    text-align: center;
+}
+
+.article img{
+    display: block;
+    margin: 0 auto;
+    padding: 35px 0 25px 0;
+}
+
+@media (min-width: 991px) {
+    .cartComponent{
+        margin: 30px auto;
+        width: 90%;
+        padding: 15px 0;
+    }
+    .article{
+        height: 300px;
+    }
+  }
