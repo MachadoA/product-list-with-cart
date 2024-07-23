@@ -1,0 +1,59 @@
+/* Modal.module.css */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modalContent {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+  }
+
+  .modalContent h2{
+    font-size: 23px;
+    color: var(--color-rose-900);
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  .modalContent p{
+    padding-bottom: 30px;
+  }
+  
+.list{
+    padding: 10px 0;
+    background-color: var(--color-rose-50);
+    border-radius: 34px;
+}
+
+.cardItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--color-rose-100);
+}
+
+.itemDetails{
+    display: flex;
+    gap: 10px;
+}
+
+.orderSummary{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    border-bottom: 2px solid var(--color-rose-100);
+}

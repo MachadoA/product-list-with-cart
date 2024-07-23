@@ -13,3 +13,31 @@
     cursor: pointer;
     font-size: 18px;
 }
+
+.active{
+    cursor: pointer;
+    background-color: var(--color-red);
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btnContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.decrease, .increase {
+    background: none;
+    border: 1px solid #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 14px;
+    padding: 5px;
+    cursor: pointer;
+}
