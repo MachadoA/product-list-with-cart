@@ -1,6 +1,7 @@
 .cartComponent {
     margin: auto;
-    width: 90%;
+    width: 100%;
+    max-width: 445px;
     padding: 15px 0;
     background-color: var(--color-rose-50);
     border-radius: 34px;
@@ -82,24 +83,22 @@ span {
 }
 
 .carbonNeutral {
-    /* display: flex;
-    align-items: center;
+    display: flex;
     justify-content: center;
-    gap: 20px; */
+    align-items: center;
+    gap: 10px;
     margin-top: 20px;
     background-color: var(--color-rose-100);
     border-radius: 12px;
 }
 
 .carbonNeutral p{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+    margin: 0;
 }
 
 .carbonNeutral img{
     width: 22px;
+    margin: 0;
 }
 
 
@@ -107,7 +106,8 @@ span {
 @media (min-width: 991px) {
     .cartComponent {
         margin: 30px auto;
-        width: 90%;
+        width: 100%;
+        max-width: 435px;
         padding: 15px 0;
     }
     .article {

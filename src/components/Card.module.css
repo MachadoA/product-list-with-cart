@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 5px;
+    margin: auto;
 }
 
 .cardMain{
@@ -50,17 +51,20 @@
     font-weight: 700;
 }
 
-@media (min-width: 576px) and (max-width: 990px) {
+@media (min-width: 576px) and (max-width: 1260px) {
     .cardSection {
       grid-template-columns: repeat(2, 1fr); 
     }
   }
 
-@media (min-width: 991px) {
+@media (min-width: 1261px) {
     .cardSection {
         grid-template-columns: repeat(3, 1fr);
     }
     .cardMain{
         min-height: 310px;
+    }
+    .img{
+        max-width: 297px;
     }
   }

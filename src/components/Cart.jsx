@@ -8,6 +8,11 @@ export default function Cart({ items, onConfirmOrder }) {
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = items.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
 
+  const handleConfirmOrder = () => {
+    console.log('Order Items:', items);
+    onConfirmOrder(items);
+  };
+
   return (
     <section className={styles.cartComponent}>
       <article className={styles.article}>
@@ -19,7 +24,7 @@ export default function Cart({ items, onConfirmOrder }) {
           </>
         ) : (
           <>
-            <ul className={styles.cartList}>
+            <ul>
               {items.map(item => (
                 <li key={item.name} className={styles.cartItem}>
                   <div className={styles.itemInfo}>
@@ -37,11 +42,11 @@ export default function Cart({ items, onConfirmOrder }) {
                 <span>${totalPrice}</span>
               </li>
               <li className={styles.carbonNeutral}>
-                <p><img src={carbonNeutro} alt="icon carbon neutro" />
-                This is a <b>carbon-neutral</b> delivery</p>
+                <p><img src={carbonNeutro} alt="icon carbon neutro" /></p>
+                <p>This is a <b>carbon-neutral</b> delivery</p>
               </li>
               <li>
-                <ButtonMain onClick={onConfirmOrder} label='Confirm Order' />
+                <ButtonMain onClick={handleConfirmOrder} label='Confirm Order' />
               </li>
             </ul>
           </>

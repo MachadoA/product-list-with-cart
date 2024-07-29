@@ -16,44 +16,81 @@
     padding: 20px;
     border-radius: 8px;
     position: relative;
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 375px;
+  }
+
+  .modalContent img{
+    border-radius: 8px;
+    width: 55px;
   }
 
   .modalContent h2{
-    font-size: 23px;
+    font-size: 52px;
     color: var(--color-rose-900);
     font-weight: 700;
     margin-bottom: 5px;
+    padding-left: 10px;
   }
 
-  .modalContent p{
+  .modalContentP{
     padding-bottom: 30px;
+    padding-left: 10px;
   }
   
 .list{
-    padding: 10px 0;
+    padding: 20px 10px;
+    max-width: 315px;
     background-color: var(--color-rose-50);
     border-radius: 34px;
+    margin: auto;
 }
 
 .cardItem {
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 10px 0;
+    justify-content: space-between;
+    padding: 10px;
     border-bottom: 2px solid var(--color-rose-100);
 }
 
 .itemDetails{
     display: flex;
     gap: 10px;
+    padding-top: 10px;
+}
+
+.itemQuantity{
+  font-weight: bold;
+  color: var(--color-red);
 }
 
 .orderSummary{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px;
+    padding: 25px 10px;
     border-bottom: 2px solid var(--color-rose-100);
+}
+.orderSummaryP{
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--color-rose-900);
+}
+
+@media (min-width: 991px) {
+  .list{
+    max-width: 555px;
+  }
+  .modalContent h2,
+  .modalContentP{
+    padding-left: 20px;
+  }
+  .modalContent img{
+    width: 55px;
+    padding-left: 0;
+  }
+  .modalContent {
+    max-width: 530px;
+  }
 }

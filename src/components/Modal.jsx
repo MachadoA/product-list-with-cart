@@ -9,12 +9,12 @@ export default function Modal({ items, totalPrice, onResetOrder }) {
       <div className={styles.modalContent}>
         <img src={confirmation} alt="icon check confirmation" />
         <h2>Order Confirmed</h2>
-        <p>We hope you enjoy your food!</p>
+        <p className={styles.modalContentP}>We hope you enjoy your food!</p>
 
         <ul className={styles.list}>
           {items.map(item => (
             <li key={item.name} className={styles.cardItem}>
-              <img src={item.thumbnail} alt="image food" />
+              <img src={item.image.thumbnail} alt="image food" />
               <article className={styles.itemInfo}>
                 <h3>{item.name}</h3>
                 <div className={styles.itemDetails}>
@@ -27,7 +27,7 @@ export default function Modal({ items, totalPrice, onResetOrder }) {
           ))}
 
           <li className={styles.orderSummary}>
-            <p>Order Total </p>
+            <span className={styles.orderSummaryP}>Order Total </span>
             <span>${totalPrice}</span>
           </li>
         </ul>

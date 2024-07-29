@@ -1,6 +1,6 @@
 .btn{
     border-radius: 40px;
-    width: 460px;
+    width: 290px;
     height: 56px;
     background-color: var(--color-red);
     color: #fff;
@@ -10,4 +10,13 @@
     font-size: 18px;
     cursor: pointer;
     margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 991px) {
+    .btn{
+        width: 400px;
+    }
 }
