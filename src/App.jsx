@@ -38,11 +38,13 @@ function App() {
 
   return (
     <>
-      <Header />
-      <div className='main-content'>
-        <Card changeToCart={changeToCart}  reset={reset} setReset={setReset}/>
+      <section className='main-content'>
+        <article>
+            <Header />
+            <Card changeToCart={changeToCart}  reset={reset} setReset={setReset}/>
+        </article>
         <Cart items={cartItems} onConfirmOrder={handleConfirmOrder} />
-      </div>
+      </section>
       <Footer />
       {isModalOpen && <Modal items={cartItems} totalPrice={totalPrice} onResetOrder={handleResetOrder} />}
     </>
