@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [MachadoA/product-list-with-cart](https://github.com/MachadoA/product-list-with-cart)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [projects-list-react](https://projects-list-react.netlify.app/)
 
 ## My process
 
