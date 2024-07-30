@@ -1,49 +1,23 @@
-import { useState } from 'react';
-import Footer from './components/Footer';
-import Card from './components/Card';
-import Header from './components/Header';
-import Cart from './components/Cart';
-import Modal from './components/Modal';
+import React from 'react';
+import Footer from './components/layout/Footer/Footer';
+import Card from './components/pages/Card/Card';
+import Header from './components/layout/Header/Header';
+import Cart from './components/pages/Cart/Cart';
+import Modal from './components/pages/Modal/Modal';
+import { CartProvider, useCart } from './context/CartContext';
 import './App.css';
 
 function App() {
-  const [cartItems, setCartItems] = useState([]);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [reset, setReset] = useState(false);
-
-  const changeToCart = (item) => {
-    setCartItems((prevItems) => {
-      const itemExists = prevItems.find((i) => i.name === item.name);
-      if (itemExists) {
-        return prevItems.map((i) =>
-          i.name === item.name ? { ...i, quantity: item.quantity } : i
-        );
-      } else {
-        return [...prevItems, { ...item, quantity: item.quantity }];
-      }
-    });
-  };
-
-  const handleConfirmOrder = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleResetOrder = () => {
-    setCartItems([]); // Reseta o estado do carrinho
-    setIsModalOpen(false); // Fecha o modal
-    setReset(true); // indica que o card deve ser resetado
-  };
-
-  const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
+  const { cartItems, isModalOpen, handleConfirmOrder, handleResetOrder, totalPrice, reset, setReset } = useCart();
 
   return (
     <>
       <section className='main-content'>
         <article>
-            <Header />
-            <Card changeToCart={changeToCart}  reset={reset} setReset={setReset}/>
+          <Header />
+          <Card changeToCart={useCart().changeToCart} reset={reset} setReset={setReset} />
         </article>
-        <Cart items={cartItems} onConfirmOrder={handleConfirmOrder} />
+        <Cart onConfirmOrder={handleConfirmOrder} />
       </section>
       <Footer />
       {isModalOpen && <Modal items={cartItems} totalPrice={totalPrice} onResetOrder={handleResetOrder} />}

@@ -9,7 +9,7 @@
 
 .article {
     max-width: 100%;
-    padding: 0 12px;
+    padding: 18px;
 }
 
 .article h2 {
@@ -23,11 +23,11 @@
     text-align: center;
 }
 
-.article img {
+.emptyCart{
     display: block;
-    margin: 0 auto;
-    padding: 35px 0 25px 0;
+    margin: auto;
 }
+
 
 .itemInfo {
     display: flex;
@@ -88,6 +88,7 @@ span {
     align-items: center;
     gap: 10px;
     margin-top: 20px;
+    padding: 20px 0;
     background-color: var(--color-rose-100);
     border-radius: 12px;
 }
@@ -101,6 +102,19 @@ span {
     margin: 0;
 }
 
+.remove{
+    background-color: inherit;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+    border: 1px solid var(--color-rose-400);
+}
+
+.removeBtn{
+    width: 20px;
+    height: 20px;
+}
 
 
 @media (min-width: 991px) {

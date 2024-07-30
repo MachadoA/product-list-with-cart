@@ -1,4 +1,3 @@
-/* Modal.module.css */
 .modal {
     position: fixed;
     top: 0;
@@ -82,9 +81,8 @@
   .list{
     max-width: 555px;
   }
-  .modalContent h2,
-  .modalContentP{
-    padding-left: 20px;
+  .modalContent p{
+    padding: 10px 20px;
   }
   .modalContent img{
     width: 55px;

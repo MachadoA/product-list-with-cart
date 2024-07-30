@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import increment from '../assets/images/icon-increment-quantity.svg';
-import decrement from '../assets/images/icon-decrement-quantity.svg';
-import addCart from '../assets/images/icon-add-to-cart.svg';
+import increment from '../../../assets/images/icon-increment-quantity.svg';
+import decrement from '../../../assets/images/icon-decrement-quantity.svg';
+import addCart from '../../../assets/images/icon-add-to-cart.svg';
 import styles from './Button.module.css';
 
 export default function Button({ className, onClick, onIncrement, onDecrement, quantity, isClicked }) {

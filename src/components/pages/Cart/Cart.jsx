@@ -1,31 +1,27 @@
+import React from 'react';
+import { useCart } from '../../../context/CartContext';
+import ButtonMain from '../../shared/ButtonMain/ButtonMain';
+import emptyCart from '../../../assets/images/illustration-empty-cart.svg';
+import CarbonNeutral from '../../../assets/images/icon-carbon-neutral.svg';
+import removeItem from '../../../assets/images/icon-remove-item.svg';
 import styles from './Cart.module.css';
-import emptyCart from '../assets/images/illustration-empty-cart.svg';
-import carbonNeutro from '../assets/images/icon-carbon-neutral.svg';
-import ButtonMain from './ButtonMain';
 
-// eslint-disable-next-line react/prop-types
-export default function Cart({ items, onConfirmOrder }) {
-  const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = items.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
-
-  const handleConfirmOrder = () => {
-    console.log('Order Items:', items);
-    onConfirmOrder(items);
-  };
+const Cart = () => {
+  const { cartItems, totalPrice, handleConfirmOrder, removeFromCart, totalItem } = useCart();
 
   return (
     <section className={styles.cartComponent}>
       <article className={styles.article}>
-        <h2>Your Cart ({totalItems})</h2>
-        {totalItems === 0 ? (
+        <h2>Your Cart ({totalItem})</h2> 
+        {cartItems.length === 0 ? (
           <>
-            <img src={emptyCart} alt="empty cart" />
+            <img className={styles.emptyCart} src={emptyCart} alt="empty cart" />
             <p>Your added items will appear here</p>
           </>
         ) : (
           <>
             <ul>
-              {items.map(item => (
+              {cartItems.map(item => (
                 <li key={item.name} className={styles.cartItem}>
                   <div className={styles.itemInfo}>
                     <h3 className={styles.itemName}>{item.name}</h3>
@@ -33,6 +29,9 @@ export default function Cart({ items, onConfirmOrder }) {
                       <p className={styles.itemQuantity}>{item.quantity}x </p>
                       <p className={styles.itemPrice}>@ ${item.price.toFixed(2)}</p>
                       <p className={styles.itemTotal}>${(item.price * item.quantity).toFixed(2)}</p>
+                      <button className={styles.remove} onClick={() => removeFromCart(item.name)}>
+                        <img className={styles.removeBtn} src={removeItem} alt="remove item" />
+                      </button>
                     </div>
                   </div>
                 </li>
@@ -42,11 +41,11 @@ export default function Cart({ items, onConfirmOrder }) {
                 <span>${totalPrice}</span>
               </li>
               <li className={styles.carbonNeutral}>
-                <p><img src={carbonNeutro} alt="icon carbon neutro" /></p>
+                <img src={CarbonNeutral} alt="carbon neutral" />
                 <p>This is a <b>carbon-neutral</b> delivery</p>
               </li>
               <li>
-                <ButtonMain onClick={handleConfirmOrder} label='Confirm Order' />
+                <ButtonMain onClick={() => handleConfirmOrder()} label='Confirm Order' />
               </li>
             </ul>
           </>
@@ -55,3 +54,5 @@ export default function Cart({ items, onConfirmOrder }) {
     </section>
   );
 }
+
+export default Cart;
