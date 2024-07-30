@@ -24,7 +24,9 @@ export const CartProvider = ({ children }) => {
     };
 
     const handleConfirmOrder = () => {
+        console.log('Confirm Order button clicked');
         setIsModalOpen(true);
+        console.log('setIsModalOpen called with true');
     };
 
     const handleResetOrder = () => {
