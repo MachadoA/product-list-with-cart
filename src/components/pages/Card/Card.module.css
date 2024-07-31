@@ -20,20 +20,15 @@
     padding: 15px 0;
 }
 
-.btn{
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-}
+
 
 .img{
     border-radius: 34px;
     display: block;
     width: 100%
 }
-.img.activeImg {
-    border: 4px solid var(--color-red); /* Adiciona a borda quando a imagem é ativa */
+.activeImg {
+    border: 4px solid var(--color-red); 
 }
 
 .name{

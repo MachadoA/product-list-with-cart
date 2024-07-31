@@ -12,16 +12,24 @@
     gap: 13px;
     cursor: pointer;
     font-size: 18px;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .active{
-    cursor: pointer;
+    border-radius: 40px;
+    width: 200px;
+    height: 56px;
     background-color: var(--color-red);
     color: #fff;
-    display: flex;
-    justify-content: space-around;
     cursor: pointer;
     font-size: 18px;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .btnContent{
