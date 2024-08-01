@@ -2,9 +2,7 @@
     height: 115px;
     font-size: 53px;
     font-weight: 700;
-    background-color: var(--color-rose-400);
-    background-color: var(--color-red);
-    background-color: #973214;
+    background-color: #c8522f;
     display: flex;
     align-items: center;
     justify-content: space-between;
