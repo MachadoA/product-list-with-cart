@@ -12,10 +12,10 @@ function MainContent() {
   const { isOpenModal } = useContext(CartContext);
   return (
       <>
-        <article>
+        <main>
           <Header />
           <Card />
-        </article>
+        </main>
         <Cart />
         {isOpenModal && <Modal />}
       </>
@@ -25,9 +25,9 @@ function MainContent() {
 export default function App() {
   return (
     <CartProvider>
-      <section className="main-content">
+      <id className="main-content">
         <MainContent />
-      </section>
+      </id>
       <Footer />
     </CartProvider>
   );

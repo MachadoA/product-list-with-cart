@@ -41,7 +41,7 @@ export default function Item({ item }) {
   const checkItemInCart = () => cartItems.some((item) => item.name === name);
 
   return (
-    <article key={item.name} className={styles.cardMain}>
+    <div key={item.name} className={styles.cardMain}>
       <div className={styles.cartImage}>
         <ImageWidth image={image} alt={`Image ${name}`} className={`${styles.img} ${checkItemInCart() ? styles.activeImg : ''}`} />
         {checkItemInCart() ? (
@@ -63,6 +63,6 @@ export default function Item({ item }) {
         <p className={styles.price}>${formatPrice(price)}</p>
       </article>
 
-    </article>
+    </div>
   );
 }
