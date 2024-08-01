@@ -16,8 +16,8 @@ a{color:inherit}
   --color-green: hsl(159, 69%, 38%);
   
   --color-rose-50: #fcf9f7;
-  --color-rose-100: hsl(13, 31%, 94%);
-  --color-rose-300: hsl(14, 25%, 72%);
+  --color-rose-100: #f4edeb;
+  --color-rose-300: #c9aea6;
   --color-rose-400: #ad8985;
   --color-rose-500: #87635a;
   --color-rose-900: hsl(14, 65%, 9%);
@@ -37,7 +37,6 @@ body{
   font-size: 14px;
   color: #fff;
   text-align: center;
-  /* padding: 10px 0; */
   height: 50px;
   background-color: var(--color-rose-400);
 }
