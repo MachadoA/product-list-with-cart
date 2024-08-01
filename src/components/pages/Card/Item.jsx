@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { motion } from 'framer-motion';
 import { CartContext } from "../../../context/CartContext";
 import ButtonAdd from "../../shared/Button/ButtonAdd";
 import ButtonAddActive from "../../shared/Button/ButtonActive";
@@ -41,30 +42,39 @@ export default function Item({ item }) {
   const checkItemInCart = () => cartItems.some((item) => item.name === name);
 
   return (
-    <article key={item.name} className={styles.cardMain}>
-      <div className={styles.cartImage}>
-        <ImageWidth image={image} alt={`Image ${name}`} className={`${styles.img} ${checkItemInCart() ? styles.activeImg : ''}`} />
-        {checkItemInCart() ? (
-          <ButtonAddActive
-            className={styles.button}
-            item={item}
-            addItemToCart={addItemToCart}
-            removeItemToCart={removeItemToCart}
-            cartItems={cartItems}
-          />
-        ) : (
-          <ButtonAdd addItemToCart={addItemToCart} />
-        )}
-      </div>
-
-      <article className={styles.article}>
-        <p className={styles.name}>{category}</p>
-        <div className={styles.column}>
-          <p className={styles.title}>{name}</p>
-          <p className={styles.price}>${formatPrice(price)}</p>
+    <motion.div
+      key={item.name}
+      initial={{ opacity: 0.5, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.2,
+        delay: item.name * 0.1,
+      }}
+      viewport={{ once: true, amount: 0.8 }}
+    >
+      <article key={item.name} className={styles.cardMain}>
+        <div className={styles.cartImage}>
+          <ImageWidth image={image} alt={`Image ${name}`} className={`${styles.img} ${checkItemInCart() ? styles.activeImg : ''}`} />
+          {checkItemInCart() ? (
+            <ButtonAddActive
+              className={styles.button}
+              item={item}
+              addItemToCart={addItemToCart}
+              removeItemToCart={removeItemToCart}
+              cartItems={cartItems}
+            />
+          ) : (
+            <ButtonAdd addItemToCart={addItemToCart} />
+          )}
         </div>
+        <article className={styles.article}>
+          <p className={styles.name}>{category}</p>
+          <div className={styles.column}>
+            <p className={styles.title}>{name}</p>
+            <p className={styles.price}>${formatPrice(price)}</p>
+          </div>
+        </article>
       </article>
-
-    </article>
+    </motion.div>
   );
 }

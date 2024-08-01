@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import {motion} from 'framer-motion';
 import { CartContext } from "../../../context/CartContext";
 import TotalPrice from "../Cart/TotalPrice";
 import CartItem from "../Cart/CartItem";
@@ -44,7 +45,13 @@ export default function Modal() {
             <TotalPrice />
             
             <button className={styles.closeModalBtn} onClick={closeModalFinal}>Continue Shopping </button>
-            <ButtonMain label='Start New Order' onClick={handleReset}/>
+            <motion.div
+              whileHover={{ scale: 1.025 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+            >
+              <ButtonMain label='Start New Order' onClick={handleReset}/>
+            </motion.div>
 
           </div>
         </div>

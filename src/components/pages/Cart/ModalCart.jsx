@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { motion } from 'framer-motion';
 import { CartContext } from '../../../context/CartContext.jsx';
 import EmptyCart from './EmptyCart';
 import OrderCart from './OrderCart';
@@ -23,7 +24,15 @@ export default function ModalCart(){
         <article className={styles.articleModal}>
            <div className={styles.titleLine}>
              <h2>Your Cart ({totalItems})</h2>
-             <button className={styles.closeModalBtn}><img src={removeItem} alt='remove item' className={styles.closeModal} onClick={closeModal}/></button>
+             <motion.button
+              className={styles.removeBtnAnimation}
+              onClick={closeModal}
+              whileHover={{ rotate: 90, scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+            >
+              <img src={removeItem} alt="remove item" className={styles.removeBtn} />
+            </motion.button>
            </div>
                {totalItems <= 0 ? <EmptyCart/> : <OrderCart/>}
         </article>

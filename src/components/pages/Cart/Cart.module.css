@@ -13,12 +13,11 @@
 .count{
     color: var(--color-rose-100);
     cursor: pointer;
-}
-.count:hover{
-    background-color: #fff;
     border-radius: 50%;
     padding: 15px;
-    color: var(--color-rose-500);
+}
+.count:hover{
+    background-color: #ffffff46;
 }
 
 
@@ -129,10 +128,18 @@ span {
     border: 1px solid var(--color-rose-400);
     margin-left: 40%;
 }
+.removeBtnAnimation{
+    background-color: inherit;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+}
 .removeBtn{
     width: 20px;
     height: 20px;
     cursor: pointer;
+    border: none;
 }
 
 .titleLine{

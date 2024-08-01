@@ -1,4 +1,5 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
+import {motion} from 'framer-motion';
 import CartItem from './CartItem';
 import TotalPrice from './TotalPrice';
 import ButtonMain from '../../shared/ButtonMain/ButtonMain';
@@ -26,7 +27,12 @@ export default function OrderCart() {
                         <p>This is a <b>carbon-neutral</b> delivery</p>
                 </li>
                 <li>
+                <motion.div
+                    animate={{ scale: [1, 1.1, 1] }}
+                    transition={{ duration: 2.5, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }}
+                >
                     <ButtonMain onClick={() => setIsOpenModal(true)} label='Confirm Order' />
+                </motion.div>
                 </li>
             </ul>
         </>
