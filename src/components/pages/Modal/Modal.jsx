@@ -1,19 +1,26 @@
-import iconOrderConfirmed from "/images/icon-order-confirmed.svg";
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import TotalPrice from "../Cart/TotalPrice";
 import CartItem from "../Cart/CartItem";
-import styles from "./Modal.module.css";
 import ButtonMain from "../../shared/ButtonMain/ButtonMain";
+import iconOrderConfirmed from "/images/icon-order-confirmed.svg";
+import iconCloseModal from "/images/icon-close.svg";
+
+import styles from "./Modal.module.css";
 
 export default function Modal() {
-  const { cartItems, setCartItems, isOpenModal, setIsOpenModal } =
+  const { cartItems, setCartItems, isOpenModal, setIsOpenModal, setIsOpenModalCart } =
     useContext(CartContext);
 
   const handleReset = () => {
     setCartItems([]);
     setIsOpenModal(false);
+    setIsOpenModalCart(false)
   };
+
+  function closeModalFinal(){
+    setIsOpenModal(false);
+  }
 
   return (
     <>
@@ -36,6 +43,7 @@ export default function Modal() {
             
             <TotalPrice />
             
+            <button className={styles.closeModalBtn} onClick={closeModalFinal}>Continue Shopping </button>
             <ButtonMain label='Start New Order' onClick={handleReset}/>
 
           </div>

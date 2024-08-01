@@ -1,3 +1,14 @@
+.titleMain{
+    margin: 5px auto;
+    width: 100%;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+    color: var(--color-rose-500);
+}
+
 .cardSection{
     display: grid;
     grid-template-columns: 1fr;
@@ -7,23 +18,24 @@
 
 .cardMain{
     margin: auto;
+    margin-bottom: 20px;
     width: 90%;
-    padding: 15px 0;
+    background-color: var(--color-rose-100);
+    border-radius: 34px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .article{
-    padding-top: 35px;
+    padding: 20px 15px;
 }
 
 .cartImage{
     position: relative;
-    padding: 15px 0;
 }
 
-
-
 .img{
-    border-radius: 34px;
+    border-top-left-radius: 34px;
+    border-top-right-radius: 34px;
     display: block;
     width: 100%
 }
@@ -33,11 +45,13 @@
 
 .name{
     color: var(--color-rose-500);
+    font-weight: bold;
 }
 
 .title{
     color: var(--color-rose-900);
-    font-size: 18px;
+    font-size: 20px;
+    padding: 10px 0;
 }
 
 .price{
@@ -45,12 +59,25 @@
     color: var(--color-red);
     font-weight: 700;
 }
+.column{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
 
 @media (min-width: 576px) and (max-width: 1260px) {
     .cardSection {
       grid-template-columns: repeat(2, 1fr); 
     }
   }
+
+  @media (min-width: 576px) and (max-width: 775px) {
+    .cardMain{
+        height: 395px;
+    }
+  }
+
 
 @media (min-width: 1261px) {
     .cardSection {
@@ -60,6 +87,6 @@
         min-height: 310px;
     }
     .img{
-        max-width: 297px;
+        max-width: 430px;
     }
   }

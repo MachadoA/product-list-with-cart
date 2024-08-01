@@ -59,8 +59,10 @@ export default function Item({ item }) {
 
       <article className={styles.article}>
         <p className={styles.name}>{category}</p>
-        <p className={styles.title}>{name}</p>
-        <p className={styles.price}>${formatPrice(price)}</p>
+        <div className={styles.column}>
+          <p className={styles.title}>{name}</p>
+          <p className={styles.price}>${formatPrice(price)}</p>
+        </div>
       </article>
 
     </article>

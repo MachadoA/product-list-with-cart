@@ -10,19 +10,19 @@
 }
 
 :root{
-  --color-red: hsl(14, 86%, 42%);
+  --color-red: #c73a0f;
   --color-green: hsl(159, 69%, 38%);
   
-  --color-rose-50: hsl(20, 50%, 98%);
+  --color-rose-50: #fcf9f7;
   --color-rose-100: hsl(13, 31%, 94%);
   --color-rose-300: hsl(14, 25%, 72%);
-  --color-rose-400: hsl(7, 20%, 60%);
-  --color-rose-500: hsl(12, 20%, 44%);
+  --color-rose-400: #ad8985;
+  --color-rose-500: #87635a;
   --color-rose-900: hsl(14, 65%, 9%);
 }
 
 body{
-  background-color: var(--color-rose-100);
+  background-color: var(--color-rose-50);
 }
 
 .main-content{
@@ -37,7 +37,7 @@ body{
 @media (min-width: 991px) {
   .main-content {
     display: grid;
-    grid-template-columns:  minmax(auto, 2fr) 1fr;
+    grid-template-columns:  minmax(auto, 3fr);
     align-items: start;
     gap: 5px;
     max-width: 1440px;
