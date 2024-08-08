@@ -19,11 +19,6 @@
     max-width: 375px;
   }
 
-  /* .modalContent img{
-    border-radius: 8px;
-    width: 55px;
-  } */
-
   .modalContent h2{
     font-size: 52px;
     color: var(--color-rose-900);
@@ -59,8 +54,6 @@
     background-color: var(--color-rose-500);
   }
 
-  
-  
 .list{
     padding: 20px 10px;
     max-width: 315px;
@@ -101,7 +94,7 @@
   color: var(--color-rose-900);
 }
 
-@media (min-width: 991px) {
+@media (min-width: 530px) {
   .list{
     max-width: 555px;
   }
@@ -114,6 +107,10 @@
   }
   .modalContent {
     max-width: 530px;
+    height: 90%;
+  }
+  .modalContent h2{
+    font-size: 30px;
   }
   .closeModalBtn{
     width: 377px;

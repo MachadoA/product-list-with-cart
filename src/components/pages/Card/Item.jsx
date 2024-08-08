@@ -52,7 +52,7 @@ export default function Item({ item }) {
       }}
       viewport={{ once: true, amount: 0.8 }}
     >
-      <article key={item.name} className={styles.cardMain}>
+      <div key={item.name} className={styles.cardMain}>
         <div className={styles.cartImage}>
           <ImageWidth image={image} alt={`Image ${name}`} className={`${styles.img} ${checkItemInCart() ? styles.activeImg : ''}`} />
           {checkItemInCart() ? (
@@ -68,13 +68,13 @@ export default function Item({ item }) {
           )}
         </div>
         <article className={styles.article}>
-          <p className={styles.name}>{category}</p>
+          <h2 className={styles.name}>{category}</h2>
           <div className={styles.column}>
             <p className={styles.title}>{name}</p>
             <p className={styles.price}>${formatPrice(price)}</p>
           </div>
         </article>
-      </article>
+      </div>
     </motion.div>
   );
 }
